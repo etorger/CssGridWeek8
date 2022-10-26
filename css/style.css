@@ -1,0 +1,155 @@
+:root {
+    --my-padding:0.4rem;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: rgb(0, 0, 0);
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase; 
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 0.1fr 1.7fr 0.7fr 0.7fr 0.5fr;
+    grid-template-areas: 
+    "header menu"
+    "content1 content1"
+    "main content2"
+    "main content3"  
+    "sidebar sidebar"
+    ;
+}
+Menu {
+background-color: rgb(255, 0, 0);
+padding: var(--my-padding);
+padding-top: 1rem;
+grid-area: menu;
+align-items: center;
+display: grid;
+
+}
+
+header {
+    background-color: aqua;
+    padding: var(--my-padding);
+    padding-top: 1rem;
+    grid-area: header;
+    display: grid;
+align-items: center;
+}
+
+
+nav{
+    background-color: rgba(39, 63, 109, 0.678);
+    padding: var(--my-padding);
+    grid-area: nav;
+}
+.nav-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    height: 100%;
+    align-items: center;
+}
+
+.content1 {
+    display: grid;
+    align-items: center;
+    background-color: tomato;
+    grid-area: content1;
+    padding: var(--my-padding);
+}
+.content2 {
+    display: grid;
+    align-items: center;
+    background-color: rgb(112, 31, 17);
+    grid-area: content2;
+    padding: var(--my-padding);
+}
+
+.content3 {
+    display: grid;
+    align-items: center;
+    background-color: rgb(221, 49, 18);
+    grid-area: content3;
+    padding: var(--my-padding);
+}
+
+.sidebar {
+    display: grid;
+    align-items: center;
+    background-color: aquamarine;
+    grid-area: sidebar;
+    padding: var(--my-padding);
+}
+
+main {
+    display: grid;
+    align-items: center;
+    background-color: blanchedalmond;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+footer {
+    display: none;
+    align-items: center;background-color: beige;
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+    .container {
+    
+    grid-template-columns: 0.4fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1.2fr 2fr 1fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "content1 content1 content1"
+    "menu main main"
+    "menu sidebar sidebar"
+    "menu content3 content2"
+    ;
+   } 
+
+   footer {
+    display: none;
+}
+  
+}
+
+@media (max-width: 480px){
+    .nav-container {
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(4, 1fr)
+       }
+    
+   
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.3fr 0.6fr 0.6fr 0.3fr 0.3fr 0.3fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "content1"
+        "main"
+        "sidebar"
+        "content3"
+        "content2"
+        ;   
+    }
+
+    
+    
+    
+
+
+
+}
